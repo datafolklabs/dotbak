@@ -1,5 +1,8 @@
 # Lazily Backup Files and Directories
 
+[![Continuous Integration Status](https://travis-ci.org/datafolklabs/dotbak.svg)](https://travis-ci.org/datafolklabs/dotbak)
+
+
 ## Installation
 
 ```
