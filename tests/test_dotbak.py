@@ -1,36 +1,24 @@
 
+import os
 from pytest import raises
+from dotbak.core import exc
 from dotbak.main import DotBakTest
 
-def test_dotbak():
-    # test dotbak without any subcommands or arguments
-    with DotBakTest() as app:
+
+def test_dotbak_default(tmp):
+    with DotBakTest(argv=[tmp.file]) as app:
         app.run()
         assert app.exit_code == 0
+        assert os.path.exists(f'{tmp.file}.bak')
 
-
-def test_dotbak_debug():
-    # test that debug mode is functional
-    argv = ['--debug']
-    with DotBakTest(argv=argv) as app:
+def test_dotbak_suffix(tmp):
+    with DotBakTest(argv=['--suffix=.notbak', tmp.file]) as app:
         app.run()
-        assert app.debug is True
+        assert app.exit_code == 0
+        assert os.path.exists(f'{tmp.file}.notbak')
 
-
-def test_command1():
-    # test command1 without arguments
-    argv = ['command1']
-    with DotBakTest(argv=argv) as app:
-        app.run()
-        data,output = app.last_rendered
-        assert data['foo'] == 'bar'
-        assert output.find('Foo => bar')
-
-
-    # test command1 with arguments
-    argv = ['command1', '--foo', 'not-bar']
-    with DotBakTest(argv=argv) as app:
-        app.run()
-        data,output = app.last_rendered
-        assert data['foo'] == 'not-bar'
-        assert output.find('Foo => not-bar')
+def test_dotbak_missing_source(tmp):
+    os.remove(tmp.file)
+    with DotBakTest(argv=[tmp.file]) as app:
+        with raises(exc.DotBakError):
+            app.run()

@@ -1,8 +1,10 @@
 
+import os
 from cement import Controller, ex
 from cement.utils import fs
 from cement.utils.version import get_version_banner
 from ..core.version import get_version
+from ..core import exc
 
 VERSION_BANNER = """
 Lazily Backup Files and Directories %s
@@ -39,10 +41,15 @@ class Base(Controller):
     def _default(self):
         """Default action if no sub-command is passed."""
 
+        path = self.app.pargs.path
+        
         if self.app.pargs.suffix is not None:
             suffix = self.app.pargs.suffix
         else:
             suffix = self.app.config.get('dotbak', 'suffix')
+
+        if not os.path.exists(self.app.pargs.path):
+            raise exc.DotBakError(f'Path does not exist: {path}')
 
         fs.backup(self.app.pargs.path, suffix=suffix)
 
