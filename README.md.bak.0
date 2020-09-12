@@ -8,22 +8,6 @@ $ pip install -r requirements.txt
 $ pip install setup.py
 ```
 
-## Usage
-
-```
-$ dotbak README.md
-
-$ dotbak README.md
-
-$ dotbak README.md
-
-|$ ls -lah README.md*
--rw-r--r--    1 user     user        2.4K Sep 12 12:10 README.md
--rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak
--rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak.0
--rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak.1
-```
-
 ## Development
 
 This project includes a number of helpers in the `Makefile` to streamline common development tasks.

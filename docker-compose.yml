@@ -1,0 +1,41 @@
+version: "3"
+services:
+    dotbak: &DEFAULTS
+        image: "dotbak:dev"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev
+        hostname: dotbak
+        stdin_open: true
+        tty: true
+        volumes:
+            - '.:/src'
+        working_dir: '/src'
+
+    dotbak-py35:
+        <<: *DEFAULTS
+        image: "dotbak:dev-py35"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev-py35
+
+    dotbak-py36:
+        image: "dotbak:dev-py36"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev-py36
+        <<: *DEFAULTS
+
+    dotbak-py37:
+        image: "dotbak:dev-py37"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev-py37
+        <<: *DEFAULTS
+    
+    dotbak-py38:
+        image: "dotbak:dev-py38"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev-py38
+        <<: *DEFAULTS
