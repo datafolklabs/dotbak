@@ -6,6 +6,9 @@ dotbak:
 ### Backup file suffix
 # suffix: .bak
 
+### Whether or not to include timestamps in file/directory backup name
+# timestamps: true
+
 ### Toggle application level debug (does not toggle framework debugging)
 # debug: false
 
@@ -18,14 +21,8 @@ dotbak:
 ### Where external templates are loaded from
 # template_dir: /var/lib/dotbak/templates/
 
-### The log handler label
-# log_handler: colorlog
 
-### The output handler label
-# output_handler: jinja2
-
-
-log.colorlog:
+log.logging:
 
 ### Where the log file lives (no log file by default)
 # file: null

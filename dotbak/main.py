@@ -7,7 +7,7 @@ from .controllers.base import Base
 # configuration defaults
 CONFIG = init_defaults('dotbak')
 CONFIG['dotbak']['suffix'] = '.bak'
-
+CONFIG['dotbak']['timestamps'] = True
 
 class DotBak(App):
     """DotBak primary application."""
@@ -24,7 +24,6 @@ class DotBak(App):
         # load additional framework extensions
         extensions = [
             'yaml',
-            'colorlog',
             'jinja2',
         ]
 
@@ -33,9 +32,6 @@ class DotBak(App):
 
         # configuration file suffix
         config_file_suffix = '.yml'
-
-        # set the log handler
-        log_handler = 'colorlog'
 
         # set the output handler
         output_handler = 'jinja2'
