@@ -1,6 +1,6 @@
 # dotBAK - Lazily Backup Files and Directories
 
-[![Continuous Integration Status](https://app.travis-ci.com/datafolklabs/dotbak.svg?branch=master)](https://travis-ci.com/github/datafolklabs/dotbak)
+[![Built on Cement™](https://img.shields.io/badge/Built%20on%20Cement%E2%84%A2-3.0-yellow)](https://builtoncement.com) [![Continuous Integration Status](https://app.travis-ci.com/datafolklabs/dotbak.svg?branch=master)](https://travis-ci.com/github/datafolklabs/dotbak)
 
 
 ## Installation
