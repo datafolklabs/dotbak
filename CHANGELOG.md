@@ -1,8 +1,12 @@
 # dotBAK Change History
 
+## 0.0.6
+
+- Bump version for PyPi (README)
+
 ## 0.0.4
 
-- Bump version for PyPi
+- Bump version for PyPi (README)
 
 
 ## 0.0.2
