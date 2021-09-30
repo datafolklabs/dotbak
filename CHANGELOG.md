@@ -1,4 +1,4 @@
-# DotBak Change History
+# dotBAK Change History
 
 ## 0.0.2
 

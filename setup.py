@@ -4,7 +4,7 @@ from dotbak.core.version import get_version
 
 VERSION = get_version()
 
-f = open('README.md', 'r')
+f = open('README-pypi.md', 'r')
 LONG_DESCRIPTION = f.read()
 f.close()
 

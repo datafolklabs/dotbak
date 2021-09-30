@@ -1,4 +1,4 @@
-# Lazily Backup Files and Directories
+# dotBAK - Lazily Backup Files and Directories
 
 [![Continuous Integration Status](https://app.travis-ci.com/datafolklabs/dotbak.svg?branch=master)](https://travis-ci.com/github/datafolklabs/dotbak)
 
@@ -118,7 +118,7 @@ $ make dist-upload
 
 ### Docker
 
-Included is a basic `Dockerfile` for building and distributing `DotBak`,
+Included is a basic `Dockerfile` for building and distributing `dotBAK`,
 and can be built with the included `make` helper:
 
 ```
@@ -126,3 +126,7 @@ $ make docker
 
 $ docker run -it dotbak --help
 ```
+
+## License
+
+dotBAK is Open Source and is distributed under the BSD License (three clause).  Please see the LICENSE file included with this software.
