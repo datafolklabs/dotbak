@@ -26,7 +26,7 @@ test:
 		tests/
 
 docker: clean
-	docker build -t dotbak:latest .
+	docker build -t datafolklabs/dotbak:latest .
 
 dist: clean
 	rm -rf dist/*

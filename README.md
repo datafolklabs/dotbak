@@ -1,14 +1,12 @@
 # Lazily Backup Files and Directories
 
-[![Continuous Integration Status](https://travis-ci.org/datafolklabs/dotbak.svg)](https://travis-ci.org/datafolklabs/dotbak)
+[![Continuous Integration Status](https://travis-ci.com/github/datafolklabs/dotbak.svg)](https://travis-ci.com/datafolklabs/dotbak)
 
 
 ## Installation
 
 ```
-$ pip install -r requirements.txt
-
-$ pip install setup.py
+$ pip install dotbak
 ```
 
 ## Usage
@@ -22,9 +20,9 @@ $ dotbak README.md
 
 |$ ls -lah README.md*
 -rw-r--r--    1 user     user        2.4K Sep 12 12:10 README.md
--rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak
--rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak.0
--rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak.1
+-rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak-2021-09-30-17:23:45
+-rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak-2021-09-30-17:23:57
+-rw-r--r--    1 user     user        2.4K Sep 12 12:56 README.md.bak-2021-09-30-17:24:14
 ```
 
 ## Development
