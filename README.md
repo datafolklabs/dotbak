@@ -61,7 +61,6 @@ The latest stable version of Python 3 is the default, and target version accessi
 $ docker-compose ps
         Name                      Command               State     Ports
 -------------------------------------------------------------------------
-dotbak_dotbak-py35_1   /bin/bash                        Up
 dotbak_dotbak-py36_1   /bin/bash                        Up
 dotbak_dotbak-py37_1   /bin/bash                        Up
 dotbak_dotbak-py38_1   /bin/bash                        Up
@@ -97,14 +96,16 @@ $ make test
 
 ### Releasing to PyPi
 
+*Only for official maintainers.*
+
 Before releasing to PyPi, you must configure your login credentials:
 
 **~/.pypirc**:
 
 ```
 [pypi]
-username = YOUR_USERNAME
-password = YOUR_PASSWORD
+username = __token__
+password = YOUR_PYPI_API_TOKEN
 ```
 
 Then use the included helper function via the `Makefile`:
@@ -125,7 +126,7 @@ and can be built with the included `make` helper:
 ```
 $ make docker
 
-$ docker run -it dotbak --help
+$ docker run -it datafolklabs/dotbak:latest --help
 ```
 
 ## License
