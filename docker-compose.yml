@@ -11,31 +11,31 @@ services:
         volumes:
             - '.:/src'
         working_dir: '/src'
-
-    dotbak-py35:
-        <<: *DEFAULTS
-        image: "dotbak:dev-py35"
-        build:
-            context: .
-            dockerfile: docker/Dockerfile.dev-py35
-
-    dotbak-py36:
-        image: "dotbak:dev-py36"
-        build:
-            context: .
-            dockerfile: docker/Dockerfile.dev-py36
-        <<: *DEFAULTS
-
-    dotbak-py37:
-        image: "dotbak:dev-py37"
-        build:
-            context: .
-            dockerfile: docker/Dockerfile.dev-py37
-        <<: *DEFAULTS
     
     dotbak-py38:
         image: "dotbak:dev-py38"
         build:
             context: .
             dockerfile: docker/Dockerfile.dev-py38
+        <<: *DEFAULTS
+    
+    dotbak-py39:
+        image: "dotbak:dev-py38"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev-py39
+        <<: *DEFAULTS
+    
+    dotbak-py310:
+        image: "dotbak:dev-py38"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev-py310
+        <<: *DEFAULTS
+    
+    dotbak-py311:
+        image: "dotbak:dev-py38"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev-py311
         <<: *DEFAULTS
