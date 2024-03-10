@@ -1,5 +1,6 @@
 
 import os
+from typing import Any
 from datetime import datetime
 from cement import Controller, ex
 from cement.utils import fs
@@ -39,14 +40,14 @@ class Base(Controller):
         ]
 
 
-    def _clean_path(self, path):
+    def _clean_path(self, path: str) -> str:
         RSTRIP = ['/', '\\']
         for char in RSTRIP:
             path = self.app.pargs.path.rstrip(char)
-        res = fs.abspath(path)
+        res: str = fs.abspath(path)
         return res
 
-    def _default(self):
+    def _default(self) -> Any:
         """Default action if no sub-command is passed."""
 
         path = self._clean_path(self.app.pargs.path)

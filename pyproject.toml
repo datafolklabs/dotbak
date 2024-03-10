@@ -1,0 +1,13 @@
+[tool.mypy]
+python_version = "3.8"
+disallow_untyped_defs = true
+disallow_any_unimported = false
+no_implicit_optional = true
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
+show_error_codes = true
+
+[[tool.mypy.overrides]]
+module = "cement.*"
+ignore_missing_imports = true

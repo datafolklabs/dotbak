@@ -17,13 +17,16 @@ virtualenv:
 	@echo "VirtualENV Setup Complete. Now run: source env/bin/activate"
 	@echo
 
-test:
+test: comply-typing
 	python -m pytest \
 		-v \
 		--cov=dotbak \
 		--cov-report=term \
 		--cov-report=html:coverage-report \
 		tests/
+
+comply-typing:
+	python -m mypy --config-file pyproject.toml -p dotbak
 
 docker: clean
 	docker build -t datafolklabs/dotbak:latest .

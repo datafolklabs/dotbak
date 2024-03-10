@@ -49,7 +49,7 @@ class DotBakTest(TestApp,DotBak):
         label = 'dotbak'
 
 
-def main():
+def main() -> None:
     with DotBak() as app:
         try:
             app.run()
