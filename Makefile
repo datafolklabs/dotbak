@@ -17,13 +17,18 @@ virtualenv:
 	@echo "VirtualENV Setup Complete. Now run: source env/bin/activate"
 	@echo
 
-test: comply-typing
+test: comply
 	python -m pytest \
 		-v \
 		--cov=dotbak \
 		--cov-report=term \
 		--cov-report=html:coverage-report \
 		tests/
+
+comply: comply-ruff comply-typing
+
+comply-ruff:
+	ruff check ./dotbak/
 
 comply-typing:
 	python -m mypy --config-file pyproject.toml -p dotbak

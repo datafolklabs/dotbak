@@ -9,6 +9,7 @@ CONFIG = init_defaults('dotbak')
 CONFIG['dotbak']['suffix'] = '.bak'
 CONFIG['dotbak']['timestamps'] = True
 
+
 class DotBak(App):
     """DotBak primary application."""
 
@@ -42,7 +43,7 @@ class DotBak(App):
         ]
 
 
-class DotBakTest(TestApp,DotBak):
+class DotBakTest(TestApp, DotBak):
     """A sub-class of DotBak that is better suited for testing."""
 
     class Meta:
@@ -71,7 +72,7 @@ def main() -> None:
                 traceback.print_exc()
 
         except CaughtSignal as e:
-            # Default Cement signals are SIGINT and SIGTERM, exit 0 (non-error)
+            # Default Cement signals are SIGINT and SIGTERM
             print('\n%s' % e)
             app.exit_code = 0
 

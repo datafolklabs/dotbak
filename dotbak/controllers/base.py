@@ -2,7 +2,7 @@
 import os
 from typing import Any
 from datetime import datetime
-from cement import Controller, ex
+from cement import Controller
 from cement.utils import fs
 from cement.utils.version import get_version_banner
 from ..core.version import get_version
@@ -26,19 +26,18 @@ class Base(Controller):
 
         # controller level arguments. ex: 'dotbak --version'
         arguments = [
-            ### add a version banner
-            ( [ '-v', '--version' ],
-              { 'action'  : 'version',
-                'version' : VERSION_BANNER } ),
-            ( [ '-s', '--suffix' ],
-              { 'action'  : 'store',
-                'dest'    : 'suffix' ,
-                'help'    : 'backup file/dir suffix (extension)' } ),
-            ( [ 'path' ],
-              { 'action'  : 'store',
-                'help'    : 'path to file/dir to backup' } ),
+            # add a version banner
+            (['-v', '--version'],
+             {'action': 'version',
+              'version': VERSION_BANNER}),
+            (['-s', '--suffix'],
+             {'action': 'store',
+              'dest': 'suffix',
+              'help': 'backup file/dir suffix (extension)'}),
+            (['path'],
+             {'action': 'store',
+              'help': 'path to file/dir to backup'}),
         ]
-
 
     def _clean_path(self, path: str) -> str:
         RSTRIP = ['/', '\\']
@@ -51,7 +50,7 @@ class Base(Controller):
         """Default action if no sub-command is passed."""
 
         path = self._clean_path(self.app.pargs.path)
-        
+
         if self.app.pargs.suffix is not None:
             suffix = self.app.pargs.suffix
         else:
@@ -63,7 +62,7 @@ class Base(Controller):
 
         if not os.path.exists(self.app.pargs.path):
             raise exc.DotBakError(f'Path does not exist: {path}')
-        
+
         res = fs.backup(path, suffix=suffix)
         self.app.log.info(f'Copied {path} -> {res}')
 
